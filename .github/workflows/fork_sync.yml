@@ -1,0 +1,20 @@
+name: Sync Fork
+
+on:
+  schedule:
+    - cron: '15 */4 * * *' # every hour 
+  workflow_dispatch: # on button click
+
+jobs:
+  sync:
+    name: Sync
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sync the fork 
+        uses: tgymnich/fork-sync@v1.8
+        with:
+          token: ${{ secrets.GH_PAT }}
+          base: main
+          head: main
+          auto_merge: true
