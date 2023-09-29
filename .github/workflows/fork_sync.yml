@@ -12,9 +12,5 @@ jobs:
 
     steps:
       - name: Sync the fork 
-        uses: tgymnich/fork-sync@v1.8
-        with:
-          token: ${{ secrets.GH_PAT }}
-          base: main
-          head: main
-          auto_merge: true
+        uses: opentffoundation/scripts/.github/workflows/sync.yml@main
+        secrets: inherit
