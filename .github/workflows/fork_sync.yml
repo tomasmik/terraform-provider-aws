@@ -7,10 +7,5 @@ on:
 
 jobs:
   sync:
-    name: Sync
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Sync the fork 
-        uses: opentffoundation/scripts/.github/workflows/sync.yml@main
-        secrets: inherit
+    uses: opentffoundation/scripts/.github/workflows/sync.yml@main
+    secrets: inherit
